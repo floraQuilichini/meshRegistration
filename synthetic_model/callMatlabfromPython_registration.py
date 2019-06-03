@@ -4,8 +4,9 @@ import os
 
 # generate inputs
 eng = matlab.engine.start_matlab()
-eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\registration_results_unshared_sampling\\simp32';", nargout = 0)
-eng.eval("pc_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
+eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\registration_results_unshared_sampling\\simp32_64';", nargout = 0)
+eng.eval("source_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
+eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_64.ply';", nargout = 0)
 eng.eval("nb_pc_target = 1;", nargout = 0);
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
@@ -19,32 +20,38 @@ eng.eval("theta = 3*3.14/2;", nargout = 0)
 eng.eval("rot_axis = 'Z';", nargout = 0)
 eng.eval("trans = [0, 50, 10];", nargout = 0)
 
-full_output_dir = eng.eval("generate_inputs_for_FPFH_algorithm(output_directory, pc_filename, pc_filename, theta, rot_axis, trans, cutting_plane, ratio, nb_pc_target, type_of_noise, noise_generation, nb_noise_matrix_source, noise_level_source, nb_noise_matrix_target, noise_level_target);")
+full_output_dir = eng.eval("generate_inputs_for_FPFH_algorithm(output_directory, source_filename, target_filename, theta, rot_axis, trans, cutting_plane, ratio, nb_pc_target, type_of_noise, noise_generation, nb_noise_matrix_source, noise_level_source, nb_noise_matrix_target, noise_level_target);")
 
 
 # compute FPFH descriptors
 	# get the voxel size
 eng.eval("sub = 4;", nargout = 0)
-voxel_side_size = eng.eval("compute_voxel_size(pcread(pc_filename), sub); ")
+voxel_side_size_source = eng.eval("compute_voxel_size(pcread(source_filename), sub); ")
+voxel_side_size_target = eng.eval("compute_voxel_size(pcread(target_filename), sub); ")
 
 	# get all the pcd files in the subdirectory
 
-pcd_files = []
+pcd_files_source = []
+pcd_files_target = []
 files = [f for f in os.listdir(full_output_dir)]
-print(files)
 
 
 for file in files:
-	if '.pcd' in file:
-		pcd_files.append(os.path.join(full_output_dir, file))
+    if '.pcd' in file and '_source_' in file:
+        pcd_files_source.append(os.path.join(full_output_dir, file))
+    elif '.pcd' in file and '_target_' in file:
+        pcd_files_target.append(os.path.join(full_output_dir, file))
 
 
 	# compute FPFH features
 executable_FPFH = "C:/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
-for f in pcd_files:
-    args = executable_FPFH + " " + f + " " + str(voxel_side_size)
+for f in pcd_files_source:
+    args = executable_FPFH + " " + f + " " + str(voxel_side_size_source)
     subprocess.call(args, stdin=None, stdout=None, stderr=None)
-	
+
+for f in pcd_files_target:
+    args = executable_FPFH + " " + f + " " + str(voxel_side_size_target)
+    subprocess.call(args, stdin=None, stdout=None, stderr=None)	
 
 # call Fast Registration algorithm	
 executable_FGR = "C:\\FastGlobalRegistration-build\\FastGlobalRegistration\\Release\\FastGlobalRegistration.exe"
