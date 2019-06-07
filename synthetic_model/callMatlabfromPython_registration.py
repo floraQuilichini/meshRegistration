@@ -4,9 +4,9 @@ import os
 
 # generate inputs
 eng = matlab.engine.start_matlab()
-eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\registration_results_shared_sampling\\simp32_64\\sub_sample_s4_t2';", nargout = 0)
-eng.eval("source_filename = 'C:\\Registration_meshes\\synthetic_model\\models_shared_sampling\\ObjetSynthetique_simp32.ply';", nargout = 0)
-eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_shared_sampling\\ObjetSynthetique_simp64.ply';", nargout = 0)
+eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\registration_results_unshared_sampling\\simp32\\scale_coeff_0.5_0.5_0.5';", nargout = 0)
+eng.eval("source_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
+eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
 eng.eval("nb_pc_target = 1;", nargout = 0);
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
@@ -16,19 +16,20 @@ eng.eval("nb_noise_matrix_source = 1;", nargout = 0)
 eng.eval("nb_noise_matrix_target = 2;", nargout = 0)
 eng.eval("cutting_plane = 'XZ';", nargout = 0)
 eng.eval("ratio = 0.4;", nargout = 0)
-eng.eval("theta = 3.14/2;", nargout = 0)
-eng.eval("rot_axis = 'X';", nargout = 0)
-eng.eval("trans = [0, 10, 6];", nargout = 0)
+eng.eval("theta = 3*3.14/2;", nargout = 0)
+eng.eval("rot_axis = 'Z';", nargout = 0)
+eng.eval("trans = [0, 50, 10];", nargout = 0)
+eng.eval("scale_coeff = [0.5, 0.5, 0.5];", nargout = 0)
 
-full_output_dir = eng.eval("generate_inputs_for_FPFH_algorithm(output_directory, source_filename, target_filename, theta, rot_axis, trans, cutting_plane, ratio, nb_pc_target, type_of_noise, noise_generation, nb_noise_matrix_source, noise_level_source, nb_noise_matrix_target, noise_level_target);")
+full_output_dir = eng.eval("generate_inputs_for_FPFH_algorithm(output_directory, source_filename, target_filename, theta, rot_axis, trans, scale_coeff, cutting_plane, ratio, nb_pc_target, type_of_noise, noise_generation, nb_noise_matrix_source, noise_level_source, nb_noise_matrix_target, noise_level_target);")
 
 
 # compute FPFH descriptors
 	# get the voxel size
 eng.eval("sub_source = 4;", nargout = 0)
-eng.eval("sub_target = 2;", nargout = 0)
-voxel_side_size_source = eng.eval("compute_voxel_size(pcread(source_filename), sub_source); ")
-voxel_side_size_target = eng.eval("compute_voxel_size(pcread(target_filename), sub_target); ")
+eng.eval("sub_target = 4;", nargout = 0)
+voxel_side_size_source = eng.eval("compute_voxel_size(pcread(source_filename), sub_source, scale_coeff); ")
+voxel_side_size_target = eng.eval("compute_voxel_size(pcread(target_filename), sub_target, scale_coeff); ")
 
 	# get all the pcd files in the subdirectory
 
@@ -51,7 +52,7 @@ for f in pcd_files_source:
     subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 for f in pcd_files_target:
-    args = executable_FPFH + " " + f + " " + str(voxel_side_size_target) + " " + str(2.0*voxel_side_size_source) + " " + str(5.0*voxel_side_size_source)
+    args = executable_FPFH + " " + f + " " + str(voxel_side_size_target) 
     subprocess.call(args, stdin=None, stdout=None, stderr=None)	
 
 # call Fast Registration algorithm	
@@ -88,8 +89,9 @@ for target_file in target_bin_files:
 
 # check registration
 files = [f for f in os.listdir(full_output_dir)]
+s = eng.eval("scale_coeff")
 for file in files:
 	if '.txt' in file and 'output_' in file:
-		eng.pcRegistration(full_output_dir, full_output_dir, nargout=0)
+		eng.pcRegistration(full_output_dir, full_output_dir, s, nargout=0)
 			
 
