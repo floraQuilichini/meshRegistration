@@ -1,0 +1,15 @@
+source : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp32_source_m0_s0.3__fpfh.txt target : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp64_montecarlo_sample_target_m0_s0.5_XZ0.4_fpfh.txt
+nb points FPFH source, target : 9573 3301 
+nb points for matching : 419 
+nb bins : 33 
+mean_dist :  0.02
+source : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp32_source_m0_s0.3__fpfh.txt target : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp64_random_sample_target_m0_s0.5_XZ0.4_fpfh.txt
+nb points FPFH source, target : 9573 3320 
+nb points for matching : 405 
+nb bins : 33 
+mean_dist :  0.02
+source : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp32_source_m0_s0.3__fpfh.txt target : C:\Registration_meshes\synthetic_model\test\target_with_lower_number_of_points\KL_distance\theta0_t0_0_0Z\with_cut_with_target_and_source_noise_without_rotation\ObjetSynthetique_simp64_remeshed_target_m0_s0.5_XZ0.4_fpfh.txt
+nb points FPFH source, target : 9573 3359 
+nb points for matching : 430 
+nb bins : 33 
+mean_dist :  0.01

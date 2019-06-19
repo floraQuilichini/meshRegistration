@@ -5,9 +5,9 @@ import os
 
 # generate inputs
 eng = matlab.engine.start_matlab()
-eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\test_scaling_pc\\scale_0.5_0.5_0.5';", nargout = 0)
+eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\test_scaling_pc\\scale_0.5_0.5_0.5\\source_sub_8\\no_target_sub';", nargout = 0)
 eng.eval("source_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
-eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
+eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_64.ply';", nargout = 0)
 eng.eval("nb_pc_target = 1;", nargout = 0);
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
@@ -41,21 +41,21 @@ for file in files:
 
 
 	# get the voxel size
-sub_source = 1.0
+sub_source = 8.0
 sub_target = 1.0
 scale_coeff = eng.eval("scale_coeff")
 
 for f in pcd_files_source:
-    voxel_side_size_source = eng.compute_voxel_size(eng.pcread(f), sub_source, scale_coeff)
+    voxel_side_size_source = eng.compute_voxel_size(eng.pcread(f), sub_source)
 	
 for f in pcd_files_target:	
-    voxel_side_size_target = eng.compute_voxel_size(eng.pcread(f), sub_target, scale_coeff)	
+    voxel_side_size_target = eng.compute_voxel_size(eng.pcread(f), sub_target)	
 
 
 	# compute FPFH features
 executable_FPFH = "C:/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
 for f in pcd_files_source:
-    args = executable_FPFH + " " + f + " " + str(0) + " " + str(2*voxel_side_size_source) + " " + str(5*voxel_side_size_source)
+    args = executable_FPFH + " " + f + " " + str(voxel_side_size_source) + " " + str(2*voxel_side_size_source) + " " + str(5*voxel_side_size_source)
     subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 for f in pcd_files_target:
@@ -71,9 +71,7 @@ k = 'all';
 for source in pcd_files_source:
     for target in pcd_files_target:
         fpfh_source_file = os.path.splitext(source)[0]+'_fpfh.txt'
-        print(fpfh_source_file)
         fpfh_target_file = os.path.splitext(target)[0]+'_fpfh.txt'
-        print(fpfh_target_file)
         hist_distances = eng.compare_fpfh_histograms(fpfh_source_file,fpfh_target_file, T, k)
         # saving
         np.savetxt(os.path.join(full_output_dir, "hist_distances.txt"), hist_distances, delimiter='\n')

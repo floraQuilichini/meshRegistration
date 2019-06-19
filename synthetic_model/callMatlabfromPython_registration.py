@@ -28,7 +28,7 @@ full_output_dir = eng.eval("generate_inputs_for_FPFH_algorithm(output_directory,
 	# get the voxel size
 eng.eval("sub_source = 4;", nargout = 0)
 eng.eval("sub_target = 4;", nargout = 0)
-voxel_side_size_source = eng.eval("compute_voxel_size(pcread(source_filename), sub_source, scale_coeff); ")
+voxel_side_size_source = eng.eval("compute_voxel_size(pcread(source_filename), sub_source); ")
 voxel_side_size_target = eng.eval("compute_voxel_size(pcread(target_filename), sub_target, scale_coeff); ")
 
 	# get all the pcd files in the subdirectory
