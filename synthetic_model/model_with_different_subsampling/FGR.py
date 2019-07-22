@@ -3,8 +3,8 @@ import subprocess
 import os
 
 # call Fast Registration algorithm	
-executable_FGR = "C:\\FastGlobalRegistration-build\\FastGlobalRegistration\\Release\\FastGlobalRegistration.exe"
-full_output_dir = "C:\\Registration_meshes\\synthetic_model\\test\\target_with_lower_number_of_points\\KL_distance\\theta1.57_t0_10_20Z\\with_cut_with_target_and_source_noise_with_rotation\\temp2"
+executable_FGR = "C:\\Registration\\FGR\\FastGlobalRegistration-build\\FastGlobalRegistration\\Release\\FastGlobalRegistration.exe"
+full_output_dir = "C:\\Registration\\Test\\meshRegistration\\synthetic_model\\17_07_19\\results\\theta1.57_t0_10_6X"
 output_prefix = full_output_dir + "\\output_"
 output_ext = ".txt"
 initial_matching = 'True';
@@ -30,8 +30,11 @@ for target_file in target_bin_files:
     target_prop = target_att[-1]
     for source_file in source_bin_files:
         source_name = source_file.rsplit('.', 1)
-        source_att = source_name[0].split('_source_')
-        source_prop = source_att[-1]
-        output_file = output_prefix + source_prop + target_prop + output_ext
+        print(source_name)
+        source_att = (source_name[0].split('_source_'))[-1].rsplit('_', 1)
+        print(source_att)
+        source_prop = source_att[0]
+        print(source_prop)
+        output_file = output_prefix + source_prop + "_" + target_prop + output_ext
         args = executable_FGR + " " + os.path.join(full_output_dir, source_file) + " " + os.path.join(full_output_dir, target_file) + " " + output_file + " " + initial_matching + " " + cross_check
         subprocess.call(args, stdin=None, stdout=None, stderr=None)

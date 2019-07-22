@@ -5,9 +5,9 @@ import os
 
 # generate inputs
 eng = matlab.engine.start_matlab()
-eng.eval("output_directory = 'C:\\Registration_meshes\\synthetic_model\\test_scaling_pc\\scale_0.5_0.5_0.5\\source_sub_8\\no_target_sub';", nargout = 0)
-eng.eval("source_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
-eng.eval("target_filename = 'C:\\Registration_meshes\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_64.ply';", nargout = 0)
+eng.eval("output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\test_scaling_pc\\scale_0.5_0.5_0.5\\source_sub_8\\no_target_sub';", nargout = 0)
+eng.eval("source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_32.ply';", nargout = 0)
+eng.eval("target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\models_unshared_sampling\\ObjetSynthetique_simp_64.ply';", nargout = 0)
 eng.eval("nb_pc_target = 1;", nargout = 0);
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
@@ -53,7 +53,7 @@ for f in pcd_files_target:
 
 
 	# compute FPFH features
-executable_FPFH = "C:/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
+executable_FPFH = "C:/Registration/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
 for f in pcd_files_source:
     args = executable_FPFH + " " + f + " " + str(voxel_side_size_source) + " " + str(2*voxel_side_size_source) + " " + str(5*voxel_side_size_source)
     subprocess.call(args, stdin=None, stdout=None, stderr=None)

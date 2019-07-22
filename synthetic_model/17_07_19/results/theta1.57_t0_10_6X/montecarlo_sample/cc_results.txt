@@ -1,0 +1,3 @@
+[11:09:33] [ComputeDistances] Time: 0.02 s.
+[11:09:33] [ComputeDistances] Mean distance = 2.218105 / std deviation = 1.054508
+[11:09:33] [ComputeDistances] Result has been split along each dimension (check the 3 other scalar fields with '_X', '_Y' and '_Z' suffix!)

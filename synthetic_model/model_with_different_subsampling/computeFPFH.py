@@ -4,7 +4,7 @@ import subprocess
 import os
 
 
-full_output_dir = "C:\\Registration_meshes\\synthetic_model\\test\\target_with_lower_number_of_points\\KL_distance\\theta1.57_t0_10_20Z\\with_cut_with_target_and_source_noise_with_rotation"
+full_output_dir = "C:\\Registration\\Test\\meshRegistration\\synthetic_model\\17_07_19\\results\\theta1.57_t0_10_6X"
 
 
 # compute FPFH descriptors
@@ -23,27 +23,31 @@ for file in files:
 
 
 	# get the voxel size
-sub_source = 1.0
+#sub_source = 4.0
 sub_target = 1.0
 
 eng = matlab.engine.start_matlab()
 
-for f in pcd_files_source:
-    voxel_side_size_source = eng.compute_voxel_size(eng.pcread(f), sub_source)
-    print(voxel_side_size_source)
+#for f in pcd_files_source:
+    #voxel_side_size_source = eng.compute_voxel_size(eng.pcread(f), sub_source)
+    #print(voxel_side_size_source)
 	
 for f in pcd_files_target:	
     voxel_side_size_target = eng.compute_voxel_size(eng.pcread(f), sub_target)
-    print(voxel_side_size_target)	
+    print(voxel_side_size_target)
 
 
-	# compute FPFH features
-executable_FPFH = "C:/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
+    # compute FPFH features
+executable_FPFH = "C:/Registration/FPFH/generateFPFH_files/x64/Release/generateFPFH_files.exe"
+
 for f in pcd_files_source:
-    args = executable_FPFH + " " + f + " " + str(0) + " " + str(2*voxel_side_size_source) + " " + str(5*voxel_side_size_source)
+    pointCloud_random_down = eng.pcdownsample(eng.pcread(f),'random',0.5); # random downsampling 60% of the point cloud
+    parts = f.rsplit('.', 1)
+    pc_down_filename = parts[0] + "_downsampled." + parts[1]
+    eng.pcwrite(pointCloud_random_down,pc_down_filename,'Encoding','ascii', nargout = 0);
+    args = executable_FPFH + " " + pc_down_filename + " " + str(0) + " " + str(voxel_side_size_target*2.0) + " " + str(voxel_side_size_target*5.0) # compute FPFH
     subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 for f in pcd_files_target:
-    args = executable_FPFH + " " + f + " " + str(0) + " " + str(2*voxel_side_size_target) + " " + str(5*voxel_side_size_target)
-    subprocess.call(args, stdin=None, stdout=None, stderr=None)	
-	
+    args = executable_FPFH + " " + f + " " + str(0) + " " + str(voxel_side_size_target*2.0) + " " + str(voxel_side_size_target*5.0)
+    subprocess.call(args, stdin=None, stdout=None, stderr=None)

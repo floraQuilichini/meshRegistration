@@ -1,0 +1,2 @@
+[10:27:07] [ComputeDistances] Time: 0.02 s.
+[10:27:07] [ComputeDistances] Mean distance = 8.501966 / std deviation = 6.980343

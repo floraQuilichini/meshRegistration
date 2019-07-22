@@ -3,7 +3,8 @@ import numpy as np
 import subprocess
 import os
 
-full_output_dir = "C:\\Registration_meshes\\synthetic_model\\test\\target_with_lower_number_of_points\\KL_distance\\theta1.57_t0_10_20Z\\with_cut_with_target_and_source_noise_with_rotation"
+full_output_dir = "C:\\Registration\\Test\\meshRegistration\\synthetic_model\\10_06_19\\no_scale\\theta1.57_t0_10_20Z"
+#distance_type = 'L2'
 distance_type = 'KL'
 symmetry_type = 'max'
 write_index_matching = True;

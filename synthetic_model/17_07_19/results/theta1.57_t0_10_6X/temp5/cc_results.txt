@@ -1,0 +1,12 @@
+[11:48:48] [ComputeDistances] Time: 0.02 s.
+[11:48:48] [ComputeDistances] Mean distance = 2.117703 / std deviation = 1.012514
+[11:48:48] [ComputeDistances] Result has been split along each dimension (check the 3 other scalar fields with '_X', '_Y' and '_Z' suffix!)
+[11:48:52] [ComputeDistances] Time: 0.01 s.
+[11:48:52] [ComputeDistances] Mean distance = 2.385814 / std deviation = 1.186364
+[11:48:52] [ComputeDistances] Result has been split along each dimension (check the 3 other scalar fields with '_X', '_Y' and '_Z' suffix!)
+[11:48:53] [ComputeDistances] Time: 0.01 s.
+[11:48:53] [ComputeDistances] Mean distance = 2.194026 / std deviation = 1.006095
+[11:48:53] [ComputeDistances] Result has been split along each dimension (check the 3 other scalar fields with '_X', '_Y' and '_Z' suffix!)
+[11:48:55] [ComputeDistances] Time: 0.01 s.
+[11:48:55] [ComputeDistances] Mean distance = 2.431434 / std deviation = 1.197318
+[11:48:55] [ComputeDistances] Result has been split along each dimension (check the 3 other scalar fields with '_X', '_Y' and '_Z' suffix!)
