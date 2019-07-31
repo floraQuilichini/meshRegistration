@@ -1,0 +1,64 @@
+[17:55:13] [Global Shift] Max abs. coord = 1e+4 / max abs. diag = 1e+6
+[17:55:13] [ccColorScalesManager] Found 0 custom scale(s) in persistent settings
+[17:55:13] [Plugin] Searching: C:/Program Files/CloudCompare/plugins
+[17:55:13] 	Plugin found: Additional I/O (QADDITIONAL_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: Animation (QANIMATION_PLUGIN.dll)
+[17:55:13] 	Plugin found: CEA Virtual Broom (QBROOM_PLUGIN.dll)
+[17:55:13] 	Plugin found: CANUPO (QCANUPO_PLUGIN_DLL.dll)
+[17:55:13] 	Plugin found: Compass (QCOMPASS_PLUGIN.dll)
+[17:55:13] 	Plugin found: Cork (QCORK_PLUGIN.dll)
+[17:55:13] 	Plugin found: CSF Filter (QCSF_PLUGIN.dll)
+[17:55:13] 	Plugin found: CSV Matrix I/O (QCSV_MATRIX_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: DP file I/O (QDOT_PRODUCT_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: EDL Shader (QEDL_PLUGIN.dll)
+[17:55:13] 	Plugin found: ELlipser (QELLIPSER_PLUGIN.dll)
+[17:55:13] 	Plugin found: Facet/fracture detection (QFACETS_PLUGIN_DLL.dll)
+[17:55:13] 	Plugin found: Hough Normals Computation (QHOUGH_NORMALS_PLUGIN.dll)
+[17:55:13] 	Plugin found: Hidden Point Removal (QHPR_PLUGIN.dll)
+[17:55:13] 	Plugin found: LAS FWF file I/O (QLAS_FWF_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: M3C2 Distance (QM3C2_PLUGIN_DLL.dll)
+[17:55:13] 	Plugin found: PCD file I/O (QPCL_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: PCL wrapper (QPCL_PLUGIN.dll)
+[17:55:13] 	Plugin found: PCV / ShadeVis (QPCV_PLUGIN.dll)
+[17:55:13] 	Plugin found: Photoscan I/O (QPHOTOSCAN_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: PoissonRecon (QPOISSON_RECON_PLUGIN.dll)
+[17:55:13] 	Plugin found: RANSAC Shape Detection (QRANSAC_SD_PLUGIN.dll)
+[17:55:13] 	Plugin found: Riegl RDB2 I/O (QRDB_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: Riegl RDB I/O (QRIEGL_IO_PLUGIN.dll)
+[17:55:13] 	Plugin found: Surface of Revolution Analysis (QSRA_PLUGIN.dll)
+[17:55:13] 	Plugin found: SSAO Shader (QSSAO_PLUGIN.dll)
+[17:55:13] [Plugin] Searching: C:/Users/root/AppData/Roaming/CCCorp/CloudCompare/plugins
+[17:55:13] [Plugin] Searching: C:/ProgramData/CCCorp/CloudCompare/plugins
+[17:55:13] [Plugin] Searching: C:/Program Files/CloudCompare/data/plugins
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: OUT
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: ICM
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: PN
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: POV
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: PV
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: POLY
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: SX
+[17:55:13] [Plugin][Additional I/O] New file extension(s) registered: SOI
+[17:55:13] [Plugin][CSV Matrix I/O] New file extension(s) registered: CSV
+[17:55:13] [Plugin][DP file I/O] New file extension(s) registered: DP
+[17:55:13] [Plugin][LAS FWF file I/O] New file extension(s) registered: LAS
+[17:55:13] [Plugin][PCD file I/O] New file extension(s) registered: PCD
+[17:55:13] [Plugin][Photoscan I/O] New file extension(s) registered: PSZ
+[17:55:13] [Plugin][Riegl RDB2 I/O] New file extension(s) registered: RDBX
+[17:55:13] [Plugin][Riegl RDB I/O] New file extension(s) registered: RDS
+[17:55:13] [LOADING]
+[17:55:13] Opening file: 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ICP\registered_pc.pcd'
+[17:55:13] [I/O] File 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ICP\registered_pc.pcd' loaded successfully
+[17:55:13] Found one cloud with 3464 points
+[17:55:13] [LOADING]
+[17:55:13] Opening file: 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ICP\ObjetSynthetique_simp32_source_m0_s0.5.pcd'
+[17:55:13] [I/O] File 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ICP\ObjetSynthetique_simp32_source_m0_s0.5.pcd' loaded successfully
+[17:55:13] Found one cloud with 9573 points
+[17:55:13] Output export format (clouds) set to: ASC
+[17:55:13] [DISTANCE COMPUTATION]
+[17:55:14] [computeApproxDistances] Time: 0.10 s.
+[17:55:14] [Distances] Octree level (auto): 6
+[17:55:14] [ComputeDistances] Time: 0.02 s.
+[17:55:14] [ComputeDistances] Mean distance = 2.033483 / std deviation = 0.859455
+[17:55:14] [SAVING]
+[17:55:14] [I/O] File 'C:/Registration/Test/meshRegistration/synthetic_model/24_07_19/results/theta1.57_t0_10_6X/ICP/registered_pc_C2C_DIST.asc' saved successfully
+[17:55:14] Processed finished in 0.69 s.

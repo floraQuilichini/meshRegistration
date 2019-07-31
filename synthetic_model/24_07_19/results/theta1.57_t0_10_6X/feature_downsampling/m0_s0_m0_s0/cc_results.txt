@@ -1,0 +1,27 @@
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:50:01] [ComputeDistances] Time: 0.02 s.
+[16:50:01] [ComputeDistances] Mean distance = 1.209820 / std deviation = 0.548791
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:50:23] [ComputeDistances] Time: 0.02 s.
+[16:50:23] [ComputeDistances] Mean distance = 1.296417 / std deviation = 0.597002
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:50:45] [ComputeDistances] Time: 0.02 s.
+[16:50:45] [ComputeDistances] Mean distance = 1.249639 / std deviation = 0.557069
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:51:07] [ComputeDistances] Time: 0.02 s.
+[16:51:07] [ComputeDistances] Mean distance = 1.142609 / std deviation = 0.530126
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:51:28] [ComputeDistances] Time: 0.02 s.
+[16:51:28] [ComputeDistances] Mean distance = 1.436852 / std deviation = 0.598310
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:51:49] [ComputeDistances] Time: 0.02 s.
+[16:51:49] [ComputeDistances] Mean distance = 1.221475 / std deviation = 0.559811
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:52:09] [ComputeDistances] Time: 0.02 s.
+[16:52:09] [ComputeDistances] Mean distance = 1.216161 / std deviation = 0.553623
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:52:29] [ComputeDistances] Time: 0.02 s.
+[16:52:29] [ComputeDistances] Mean distance = 1.720752 / std deviation = 0.620931
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.2 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0_XZ0.4
+[16:52:51] [ComputeDistances] Time: 0.02 s.
+[16:52:51] [ComputeDistances] Mean distance = 2.387077 / std deviation = 1.269176

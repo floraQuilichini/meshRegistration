@@ -1,0 +1,36 @@
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:34:50] [ComputeDistances] Time: 0.02 s.
+[10:34:50] [ComputeDistances] Mean distance = 3.335673 / std deviation = 2.043950
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:35:14] [ComputeDistances] Time: 0.02 s.
+[10:35:14] [ComputeDistances] Mean distance = 3.522300 / std deviation = 2.134622
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:35:36] [ComputeDistances] Time: 0.02 s.
+[10:35:36] [ComputeDistances] Mean distance = 3.325084 / std deviation = 2.026515
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:39:20] [ComputeDistances] Time: 0.02 s.
+[10:39:20] [ComputeDistances] Mean distance = 3.457155 / std deviation = 2.172071
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:39:41] [ComputeDistances] Time: 0.02 s.
+[10:39:41] [ComputeDistances] Mean distance = 3.378590 / std deviation = 2.077016
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:40:04] [ComputeDistances] Time: 0.02 s.
+[10:40:04] [ComputeDistances] Mean distance = 3.692323 / std deviation = 2.328645
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:40:25] [ComputeDistances] Time: 0.02 s.
+[10:40:25] [ComputeDistances] Mean distance = 3.135835 / std deviation = 1.876667
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:40:46] [ComputeDistances] Time: 0.02 s.
+[10:40:46] [ComputeDistances] Mean distance = 3.540085 / std deviation = 2.186299
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:41:06] [ComputeDistances] Time: 0.02 s.
+[10:41:06] [ComputeDistances] Mean distance = 3.033657 / std deviation = 1.775046
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:41:27] [ComputeDistances] Time: 0.02 s.
+[10:41:27] [ComputeDistances] Mean distance = 3.209588 / std deviation = 1.949847
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:41:47] [ComputeDistances] Time: 0.02 s.
+[10:41:47] [ComputeDistances] Mean distance = 3.203805 / std deviation = 1.926368
+objet source : ObjetSynthetique_simp32_source_m0_s0.3 , downsampling : 0.2 ; objet target : ObjetSynthetique_simp64_remeshed_target_m0_s0.8_XZ0.4
+[10:42:08] [ComputeDistances] Time: 0.02 s.
+[10:42:08] [ComputeDistances] Mean distance = 4.575107 / std deviation = 3.300127

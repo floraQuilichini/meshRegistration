@@ -5,9 +5,9 @@ import os
 from shutil import copyfile
 
 # variables
-source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\19_07_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
-target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\19_07_19\\input_meshes\\target\\ObjetSynthetique_simp64_remeshed.ply'
-output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\19_07_19\\results'
+source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
+target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
+output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\results'
 
 eng = matlab.engine.start_matlab()
 eng.workspace['output_directory'] = output_directory
@@ -16,9 +16,9 @@ eng.workspace['target_filename'] = target_filename
 eng.eval("nb_pc_target = 1;", nargout = 0)
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
-eng.eval("noise_level_source  = 0.3", nargout = 0)
+eng.eval("noise_level_source  = 0.0", nargout = 0)
 eng.eval("noise_level_target = 0.8;", nargout = 0)
-eng.eval("nb_noise_matrix_source = 1;", nargout = 0)
+eng.eval("nb_noise_matrix_source = 0;", nargout = 0)
 eng.eval("nb_noise_matrix_target = 1;", nargout = 0)
 eng.eval("cutting_plane = 'XZ';", nargout = 0)
 eng.eval("ratio = 0.4;", nargout = 0)
@@ -32,7 +32,7 @@ eng.eval("scale_coeff = [1, 1, 1];", nargout = 0)
 
 
 # FGR registration
-downsampling_coeff_list = ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3', '0.2']
+downsampling_coeff_list = ['1.0', '0.9']
 for down_coeff  in downsampling_coeff_list:
     print(down_coeff)
     myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", full_output_dir, source_name, target_name, down_coeff])

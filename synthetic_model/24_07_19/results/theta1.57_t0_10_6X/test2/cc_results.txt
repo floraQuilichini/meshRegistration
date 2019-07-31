@@ -1,0 +1,6 @@
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[12:04:15] [ComputeDistances] Time: 0.02 s.
+[12:04:15] [ComputeDistances] Mean distance = 2.834936 / std deviation = 1.742623
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[12:04:44] [ComputeDistances] Time: 0.02 s.
+[12:04:44] [ComputeDistances] Mean distance = 2.775341 / std deviation = 1.690145

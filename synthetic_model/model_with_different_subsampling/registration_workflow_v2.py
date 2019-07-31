@@ -37,10 +37,10 @@ voxel_side_size_source = eng.compute_voxel_size(eng.pcread(os.path.join(full_out
 voxel_side_size_target = eng.compute_voxel_size(eng.pcread(os.path.join(full_output_dir, pcd_target_file)), 1.0)
 voxel_size = eng.max(voxel_side_size_target, voxel_side_size_source)
     # compute FPFH for source
-args = executable_FPFH + " " + os.path.join(full_output_dir, pc_down_filename) + " " + str(0) + " " + str(voxel_size*2.0) + " " + str(voxel_size*5.0)
+args = executable_FPFH + " " + os.path.join(full_output_dir, pc_down_filename) + " " + os.path.join(full_output_dir, pcd_source_file) + " " + str(0) + " " + str(voxel_size*2.0) + " " + str(voxel_size*5.0)
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
     # compute FPFH for target
-args = executable_FPFH + " " + os.path.join(full_output_dir, pcd_target_file) + " " + str(0) + " " + str(voxel_size*2.0) + " " + str(voxel_size*5.0)
+args = executable_FPFH + " " + os.path.join(full_output_dir, pcd_target_file) + " " + "-" + " " + str(0) + " " + str(voxel_size*2.0) + " " + str(voxel_size*5.0)
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
     
     

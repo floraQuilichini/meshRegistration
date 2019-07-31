@@ -1,0 +1,64 @@
+[19:24:11] [Global Shift] Max abs. coord = 1e+4 / max abs. diag = 1e+6
+[19:24:11] [ccColorScalesManager] Found 0 custom scale(s) in persistent settings
+[19:24:11] [Plugin] Searching: C:/Program Files/CloudCompare/plugins
+[19:24:11] 	Plugin found: Additional I/O (QADDITIONAL_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: Animation (QANIMATION_PLUGIN.dll)
+[19:24:11] 	Plugin found: CEA Virtual Broom (QBROOM_PLUGIN.dll)
+[19:24:11] 	Plugin found: CANUPO (QCANUPO_PLUGIN_DLL.dll)
+[19:24:11] 	Plugin found: Compass (QCOMPASS_PLUGIN.dll)
+[19:24:11] 	Plugin found: Cork (QCORK_PLUGIN.dll)
+[19:24:11] 	Plugin found: CSF Filter (QCSF_PLUGIN.dll)
+[19:24:11] 	Plugin found: CSV Matrix I/O (QCSV_MATRIX_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: DP file I/O (QDOT_PRODUCT_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: EDL Shader (QEDL_PLUGIN.dll)
+[19:24:11] 	Plugin found: ELlipser (QELLIPSER_PLUGIN.dll)
+[19:24:11] 	Plugin found: Facet/fracture detection (QFACETS_PLUGIN_DLL.dll)
+[19:24:11] 	Plugin found: Hough Normals Computation (QHOUGH_NORMALS_PLUGIN.dll)
+[19:24:11] 	Plugin found: Hidden Point Removal (QHPR_PLUGIN.dll)
+[19:24:11] 	Plugin found: LAS FWF file I/O (QLAS_FWF_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: M3C2 Distance (QM3C2_PLUGIN_DLL.dll)
+[19:24:11] 	Plugin found: PCD file I/O (QPCL_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: PCL wrapper (QPCL_PLUGIN.dll)
+[19:24:11] 	Plugin found: PCV / ShadeVis (QPCV_PLUGIN.dll)
+[19:24:11] 	Plugin found: Photoscan I/O (QPHOTOSCAN_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: PoissonRecon (QPOISSON_RECON_PLUGIN.dll)
+[19:24:11] 	Plugin found: RANSAC Shape Detection (QRANSAC_SD_PLUGIN.dll)
+[19:24:11] 	Plugin found: Riegl RDB2 I/O (QRDB_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: Riegl RDB I/O (QRIEGL_IO_PLUGIN.dll)
+[19:24:11] 	Plugin found: Surface of Revolution Analysis (QSRA_PLUGIN.dll)
+[19:24:11] 	Plugin found: SSAO Shader (QSSAO_PLUGIN.dll)
+[19:24:11] [Plugin] Searching: C:/Users/root/AppData/Roaming/CCCorp/CloudCompare/plugins
+[19:24:11] [Plugin] Searching: C:/ProgramData/CCCorp/CloudCompare/plugins
+[19:24:11] [Plugin] Searching: C:/Program Files/CloudCompare/data/plugins
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: OUT
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: ICM
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: PN
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: POV
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: PV
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: POLY
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: SX
+[19:24:11] [Plugin][Additional I/O] New file extension(s) registered: SOI
+[19:24:11] [Plugin][CSV Matrix I/O] New file extension(s) registered: CSV
+[19:24:11] [Plugin][DP file I/O] New file extension(s) registered: DP
+[19:24:11] [Plugin][LAS FWF file I/O] New file extension(s) registered: LAS
+[19:24:11] [Plugin][PCD file I/O] New file extension(s) registered: PCD
+[19:24:11] [Plugin][Photoscan I/O] New file extension(s) registered: PSZ
+[19:24:11] [Plugin][Riegl RDB2 I/O] New file extension(s) registered: RDBX
+[19:24:11] [Plugin][Riegl RDB I/O] New file extension(s) registered: RDS
+[19:24:11] [LOADING]
+[19:24:11] Opening file: 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\targetTransformed\ObjetSynthetique_simp64_edgeCollapse_target_m0_s1_XZ0.4Transformed.pcd'
+[19:24:11] [I/O] File 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\targetTransformed\ObjetSynthetique_simp64_edgeCollapse_target_m0_s1_XZ0.4Transformed.pcd' loaded successfully
+[19:24:11] Found one cloud with 3464 points
+[19:24:11] [LOADING]
+[19:24:11] Opening file: 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ObjetSynthetique_simp32_source_m0_s0.5.pcd'
+[19:24:11] [I/O] File 'C:\Registration\Test\meshRegistration\synthetic_model\24_07_19\results\theta1.57_t0_10_6X\ObjetSynthetique_simp32_source_m0_s0.5.pcd' loaded successfully
+[19:24:11] Found one cloud with 9573 points
+[19:24:11] Output export format (clouds) set to: ASC
+[19:24:11] [DISTANCE COMPUTATION]
+[19:24:11] [computeApproxDistances] Time: 0.11 s.
+[19:24:11] [Distances] Octree level (auto): 6
+[19:24:11] [ComputeDistances] Time: 0.02 s.
+[19:24:11] [ComputeDistances] Mean distance = 3.489913 / std deviation = 2.405571
+[19:24:11] [SAVING]
+[19:24:11] [I/O] File 'C:/Registration/Test/meshRegistration/synthetic_model/24_07_19/results/theta1.57_t0_10_6X/targetTransformed/ObjetSynthetique_simp64_edgeCollapse_target_m0_s1_XZ0.4Transformed_C2C_DIST_2019-07-24_19h24_11_802.asc' saved successfully
+[19:24:11] Processed finished in 0.75 s.
