@@ -8,6 +8,8 @@ from shutil import copyfile
 source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
 target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
 output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\results'
+initial_matching = 'True'
+cross_check = 'True'
 
 eng = matlab.engine.start_matlab()
 eng.workspace['output_directory'] = output_directory
@@ -32,10 +34,10 @@ eng.eval("scale_coeff = [1, 1, 1];", nargout = 0)
 
 
 # FGR registration
-downsampling_coeff_list = ['1.0', '0.9']
+downsampling_coeff_list = ['1.0', '0.9', '0.8', '0.7', '0.6']
 for down_coeff  in downsampling_coeff_list:
     print(down_coeff)
-    myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", full_output_dir, source_name, target_name, down_coeff])
+    myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", source_filename, full_output_dir, source_name, target_name, down_coeff, initial_matching, cross_check])
     myProcess.wait()
     
     
@@ -65,6 +67,7 @@ open(log_file, 'a').close()
 icp_cc_result_file = os.path.join(full_output_dir, output_subdir, 'icp_cc_results.txt')
 open(icp_cc_result_file, 'a').close()
 args = cloudCompare_exe + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + os.path.join(full_output_dir, output_subdir, pcd_source_file) + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2c_dist -LOG_FILE " + log_file  # compared file first and reference file second
+# args = cloudCompare_exe + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + source_filename + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to compute C2M distance
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 

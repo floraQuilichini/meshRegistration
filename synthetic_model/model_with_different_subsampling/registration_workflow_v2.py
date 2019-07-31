@@ -9,10 +9,13 @@ from shutil import copyfile
 
 
 #input parameters
-full_output_dir = sys.argv[1]
-source_name = sys.argv[2]
-target_name = sys.argv[3]
-fraction_kept_points = float(sys.argv[4])
+source_filename = sys.argv[1]
+full_output_dir = sys.argv[2]
+source_name = sys.argv[3]
+target_name = sys.argv[4]
+fraction_kept_points = float(sys.argv[5])
+initial_matching = sys.argv[6]
+cross_check = sys.argv[7]
 
 
 eng = matlab.engine.start_matlab()
@@ -48,8 +51,6 @@ subprocess.call(args, stdin=None, stdout=None, stderr=None)
 executable_FGR = "C:\\Registration\\FGR\\FastGlobalRegistration-build\\FastGlobalRegistration\\Release\\FastGlobalRegistration.exe"
 output_prefix = "output_"
 output_ext = ".txt"
-initial_matching = 'True'
-cross_check = 'True'
     # get source and target binary file
 source_bin_file = source_name + "_downsampled" + str(fraction_kept_points) + ".bin"
 target_bin_file = target_name + ".bin"    
@@ -71,6 +72,7 @@ fgr_cc_result_file = os.path.join(full_output_dir, 'cc_results.txt')
 open(fgr_cc_result_file, 'a').close()
 print(registered_target_file)
 args = cloudCompare_exe + " -o " + registered_target_file + " -o " + os.path.join(full_output_dir, pcd_source_file) + " -C_EXPORT_FMT ASC -c2c_dist -LOG_FILE " + log_file  # compared file first and reference file second
+# args = cloudCompare_exe + " -o " + registered_target_file + " -o " + source_filename + " -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to compute C2M distance
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 # process cloudCompare output
