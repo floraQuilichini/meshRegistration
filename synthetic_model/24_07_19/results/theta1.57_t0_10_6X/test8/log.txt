@@ -1,0 +1,2 @@
+[19:34:46] [I/O] File 'C:/Registration/Test/meshRegistration/synthetic_model/24_07_19/results/theta1.57_t0_10_6X/targetTransformed/ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4Transformed_C2C_DIST_2019-08-06_19h34_46_183.asc' saved successfully
+[19:34:46] Processed finished in 1.00 s.

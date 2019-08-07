@@ -1,0 +1,14 @@
+[18:27:13] [ComputeDistances] Time: 0.02 s.
+[18:27:13] [ComputeDistances] Mean distance = 2.354261 / std deviation = 1.289093
+[18:29:02] [ComputeDistances] Time: 0.03 s.
+[18:29:02] [ComputeDistances] Mean distance = 12.930721 / std deviation = 11.285246
+[18:32:37] [ComputeDistances] Time: 0.02 s.
+[18:32:37] [ComputeDistances] Mean distance = 2.354179 / std deviation = 1.291329
+[18:49:02] [ComputeDistances] Time: 0.02 s.
+[18:49:02] [ComputeDistances] Mean distance = 2.354959 / std deviation = 1.288591
+[18:53:19] [ComputeDistances] Time: 0.03 s.
+[18:53:19] [ComputeDistances] Mean distance = 13.095910 / std deviation = 11.419897
+[18:54:45] [ComputeDistances] Time: 0.02 s.
+[18:54:45] [ComputeDistances] Mean distance = 2.354651 / std deviation = 1.288766
+[19:06:52] [ComputeDistances] Time: 0.03 s.
+[19:06:52] [ComputeDistances] Mean distance = 12.933033 / std deviation = 11.282611

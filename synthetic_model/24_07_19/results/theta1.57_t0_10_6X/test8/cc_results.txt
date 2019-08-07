@@ -1,0 +1,22 @@
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:31:21] [ComputeDistances] Time: 0.02 s.
+[19:31:21] [ComputeDistances] Mean distance = 2.793434 / std deviation = 1.686367
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:31:58] [ComputeDistances] Time: 0.01 s.
+[19:31:58] [ComputeDistances] Mean distance = 2.643469 / std deviation = 1.611191
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:32:27] [ComputeDistances] Time: 0.01 s.
+[19:32:27] [ComputeDistances] Mean distance = 2.609835 / std deviation = 1.507382
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:32:53] [ComputeDistances] Time: 0.02 s.
+[19:32:53] [ComputeDistances] Mean distance = 2.614376 / std deviation = 1.527246
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:33:29] [ComputeDistances] Time: 0.01 s.
+[19:33:29] [ComputeDistances] Mean distance = 2.782341 / std deviation = 1.757612
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:34:02] [ComputeDistances] Time: 0.02 s.
+[19:34:02] [ComputeDistances] Mean distance = 2.607863 / std deviation = 1.512755
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4
+[19:34:23] [ComputeDistances] Time: 0.01 s.
+[19:34:23] [ComputeDistances] Mean distance = 2.453486 / std deviation = 1.359377
+objet source : ObjetSynthetique_simp32_source_m0_s0 , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.8_XZ0.4

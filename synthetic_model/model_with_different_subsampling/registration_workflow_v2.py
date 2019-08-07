@@ -20,6 +20,29 @@ cross_check = sys.argv[7]
 
 eng = matlab.engine.start_matlab()
 
+## rescale data
+#pcd_source_file = source_name + ".pcd"
+#pcd_target_file = target_name + ".pcd"
+#[max_scale, trans_source, trans_target] = eng.rescale_data(os.path.join(full_output_dir, pcd_source_file), os.path.join(full_output_dir, pcd_target_file), nargout = 3)
+
+#point cloud denoising
+original_pcd_source_file = source_name + ".pcd"
+original_pcd_target_file = target_name + ".pcd"
+pcd_source_file_filtered = source_name + "_filtered.pcd"
+pcd_target_file_filtered = target_name + "_filtered.pcd"
+executable_BilateralFilter = "C:/Registration/BilateralFilter/BilateralFilter/BilateralFilter-build/Release/bilateralfilter.exe"
+    #for source
+[source_radius, source_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_source_file), nargout = 2)
+args = executable_BilateralFilter + " " + os.path.join(full_output_dir, original_pcd_source_file) + " " + os.path.join(full_output_dir, pcd_source_file_filtered) + " -r " + str(source_radius) +  " -n " + str(source_normal_radius) + " -N 1"
+subprocess.call(args, stdin=None, stdout=None, stderr=None)
+source_name = source_name + "_filtered"
+    #for target
+[target_radius, target_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_target_file), nargout = 2)
+args = executable_BilateralFilter + " " + os.path.join(full_output_dir, original_pcd_target_file) + " " + os.path.join(full_output_dir, pcd_target_file_filtered) + " -r " + str(target_radius) +  " -n " + str(target_normal_radius) + " -N 1"
+subprocess.call(args, stdin=None, stdout=None, stderr=None)
+target_name = target_name + "_filtered"
+
+
 # downsample source point cloud 
     # get source pcd file
 pcd_source_file = source_name + ".pcd"
@@ -46,7 +69,17 @@ subprocess.call(args, stdin=None, stdout=None, stderr=None)
 args = executable_FPFH + " " + os.path.join(full_output_dir, pcd_target_file) + " " + "-" + " " + str(0) + " " + str(voxel_size*2.0) + " " + str(voxel_size*5.0)
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
     
-    
+
+
+# compute correspondence pairs (if needed)
+if initial_matching == 'False' or initial_matching == 'false' :
+    fpfh_source_textfilename = source_name + "_downsampled" + str(fraction_kept_points)+ "_fpfh.txt"
+    fpfh_target_textfilename = target_name + "_fpfh.txt"
+    Tfilename = os.path.join(full_output_dir, 'transform_matrix_model.txt')
+    [mean_dist, pairs_target_source] = eng.getFPFHHistogramsDistance(os.path.join(full_output_dir, fpfh_source_textfilename), os.path.join(full_output_dir, fpfh_target_textfilename), True, 'L2', nargout = 2)
+    eng.visualizeFPFHPoints(os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pcd_source_file), os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pc_down_filename), pairs_target_source, Tfilename, 1.0, 0.0, 0.0, nargout = 0)
+
+
 # FGR
 executable_FGR = "C:\\Registration\\FGR\\FastGlobalRegistration-build\\FastGlobalRegistration\\Release\\FastGlobalRegistration.exe"
 output_prefix = "output_"
@@ -71,7 +104,7 @@ open(log_file, 'a').close()
 fgr_cc_result_file = os.path.join(full_output_dir, 'cc_results.txt')
 open(fgr_cc_result_file, 'a').close()
 print(registered_target_file)
-args = cloudCompare_exe + " -o " + registered_target_file + " -o " + os.path.join(full_output_dir, pcd_source_file) + " -C_EXPORT_FMT ASC -c2c_dist -LOG_FILE " + log_file  # compared file first and reference file second
+args = cloudCompare_exe + " -o " + registered_target_file + " -o " + os.path.join(full_output_dir, original_pcd_source_file) + " -C_EXPORT_FMT ASC -c2c_dist -LOG_FILE " + log_file  # compared file first and reference file second
 # args = cloudCompare_exe + " -o " + registered_target_file + " -o " + source_filename + " -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to compute C2M distance
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 

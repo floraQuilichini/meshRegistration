@@ -8,8 +8,8 @@ from shutil import copyfile
 source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
 target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
 output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\results'
-initial_matching = 'True'
-cross_check = 'True'
+initial_matching = 'False'
+cross_check = 'False'
 
 eng = matlab.engine.start_matlab()
 eng.workspace['output_directory'] = output_directory
@@ -34,7 +34,7 @@ eng.eval("scale_coeff = [1, 1, 1];", nargout = 0)
 
 
 # FGR registration
-downsampling_coeff_list = ['1.0', '0.9', '0.8', '0.7', '0.6']
+downsampling_coeff_list = ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3']
 for down_coeff  in downsampling_coeff_list:
     print(down_coeff)
     myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", source_filename, full_output_dir, source_name, target_name, down_coeff, initial_matching, cross_check])
