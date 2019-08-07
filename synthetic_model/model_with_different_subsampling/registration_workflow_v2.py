@@ -5,7 +5,9 @@ import numpy as np
 import subprocess
 import os
 import sys
+import statistics
 from shutil import copyfile
+from pathlib import Path
 
 
 #input parameters
@@ -32,12 +34,16 @@ pcd_source_file_filtered = source_name + "_filtered.pcd"
 pcd_target_file_filtered = target_name + "_filtered.pcd"
 executable_BilateralFilter = "C:/Registration/BilateralFilter/BilateralFilter/BilateralFilter-build/Release/bilateralfilter.exe"
     #for source
-[source_radius, source_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_source_file), nargout = 2)
+#[source_radius, source_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_source_file), nargout = 2)
+source_radius = eng.compute_voxel_size(eng.pcread(os.path.join(full_output_dir, original_pcd_source_file)), 1.0) * 2.0
+source_normal_radius = source_radius
 args = executable_BilateralFilter + " " + os.path.join(full_output_dir, original_pcd_source_file) + " " + os.path.join(full_output_dir, pcd_source_file_filtered) + " -r " + str(source_radius) +  " -n " + str(source_normal_radius) + " -N 1"
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 source_name = source_name + "_filtered"
     #for target
-[target_radius, target_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_target_file), nargout = 2)
+#[target_radius, target_normal_radius] = eng.getBilateralFilterInputParameters(os.path.join(full_output_dir, original_pcd_target_file), nargout = 2)
+target_radius = eng.compute_voxel_size(eng.pcread(os.path.join(full_output_dir, original_pcd_target_file)), 1.0) * 2.0
+target_normal_radius = target_radius
 args = executable_BilateralFilter + " " + os.path.join(full_output_dir, original_pcd_target_file) + " " + os.path.join(full_output_dir, pcd_target_file_filtered) + " -r " + str(target_radius) +  " -n " + str(target_normal_radius) + " -N 1"
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 target_name = target_name + "_filtered"
@@ -98,28 +104,56 @@ eng.eval("scale_coeff = [1, 1, 1];", nargout = 0)
 #registered_target_file = eng.pcSimpleRegistration(full_output_dir, output_file, full_output_dir, eng.eval('scale_coeff'))
 registered_target_file = eng.pcSimpleRegistration_v2(full_output_dir, output_file, os.path.join(full_output_dir, original_pcd_source_file), original_pcd_target_file, eng.eval('scale_coeff'))
 
+
 # compute target registered to source distance
 cloudCompare_exe = "C:\\Program Files\\CloudCompare\\CloudCompare.exe"
-log_file = os.path.join(full_output_dir, 'log.txt')
-open(log_file, 'a').close()
+# log_file = os.path.join(full_output_dir, 'log.txt')
+# open(log_file, 'a').close()
 fgr_cc_result_file = os.path.join(full_output_dir, 'cc_results.txt')
 open(fgr_cc_result_file, 'a').close()
 print(registered_target_file)
-args = cloudCompare_exe + " -o " + registered_target_file + " -o " + os.path.join(full_output_dir, original_pcd_source_file) + " -C_EXPORT_FMT ASC -c2c_dist -LOG_FILE " + log_file  # compared file first and reference file second
+args = cloudCompare_exe + " -SILENT"+ " -o " + registered_target_file + " -o " + os.path.join(full_output_dir, original_pcd_source_file) + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2c_dist"  # compared file first and reference file second
 # args = cloudCompare_exe + " -o " + registered_target_file + " -o " + source_filename + " -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to compute C2M distance
 subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
+
 # process cloudCompare output
+    # get file with c2c distance 
+path = Path(full_output_dir) / 'targetTransformed'
+for file in os.listdir(path):
+    if "C2C_DIST" in file and ".asc" in file:
+        c2c_file = file
+
+    # get everything in column 4
+col_num = 3
+col_data = []
+delimiter = " "
+with open(path / c2c_file) as f:
+    data = f.readlines()
+    for line in data:
+        col_data.append(line.strip().split(delimiter)[col_num])
+
+mean_C2C_dist = statistics.mean(list(map(float, col_data)))
+print(mean_C2C_dist)
+std_C2C = statistics.stdev(list(map(float, col_data)))
+print(std_C2C)
 header = "objet source : " + source_name + " , downsampling : " + str(fraction_kept_points) + " ; objet target : " + target_name + "\n"
 out_file =open(fgr_cc_result_file, "a+")
 out_file.write("%s" % header)
+out_file.write("Mean distance = %5.6f / std deviation = %5.6f\n" % (mean_C2C_dist,std_C2C))
 out_file.close()
 
-f=open(log_file, "r")
-fl = f.readlines()
-for line in fl:
-    if "[ComputeDistances]" in line: 
-        out_file =open(fgr_cc_result_file, "a+")
-        out_file.write("%s" % line)
-        out_file.close()
-f.close()
+## process cloudCompare output
+# header = "objet source : " + source_name + " , downsampling : " + str(fraction_kept_points) + " ; objet target : " + target_name + "\n"
+# out_file =open(fgr_cc_result_file, "a+")
+# out_file.write("%s" % header)
+# out_file.close()
+
+# f=open(log_file, "r")
+# fl = f.readlines()
+# for line in fl:
+    # if "[ComputeDistances]" in line: 
+        # out_file =open(fgr_cc_result_file, "a+")
+        # out_file.write("%s" % line)
+        # out_file.close()
+# f.close()
