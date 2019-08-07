@@ -95,7 +95,8 @@ subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 # process registration
 eng.eval("scale_coeff = [1, 1, 1];", nargout = 0)
-registered_target_file = eng.pcSimpleRegistration(full_output_dir, output_file, full_output_dir, eng.eval('scale_coeff'))
+#registered_target_file = eng.pcSimpleRegistration(full_output_dir, output_file, full_output_dir, eng.eval('scale_coeff'))
+registered_target_file = eng.pcSimpleRegistration_v2(full_output_dir, output_file, os.path.join(full_output_dir, original_pcd_source_file), original_pcd_target_file, eng.eval('scale_coeff'))
 
 # compute target registered to source distance
 cloudCompare_exe = "C:\\Program Files\\CloudCompare\\CloudCompare.exe"
