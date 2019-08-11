@@ -1,0 +1,170 @@
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.754738 / std deviation = 0.805850
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.732212 / std deviation = 0.766638
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.740747 / std deviation = 0.781627
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.728501 / std deviation = 0.773857
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.726958 / std deviation = 0.771471
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.786213 / std deviation = 0.824331
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.645770 / std deviation = 0.681644
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.269630 / std deviation = 34.799807
+test 1 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.540120 / std deviation = 0.619089
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.522638 / std deviation = 0.621494
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.513082 / std deviation = 0.607681
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.517653 / std deviation = 0.608079
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.558061 / std deviation = 0.620229
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.541896 / std deviation = 0.613125
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.550206 / std deviation = 0.614845
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.239821 / std deviation = 34.796479
+test 2 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.671336 / std deviation = 0.686487
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.679789 / std deviation = 0.683097
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.640851 / std deviation = 0.665931
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.666547 / std deviation = 0.675263
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.708842 / std deviation = 0.693889
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.656014 / std deviation = 0.667418
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.584796 / std deviation = 0.643492
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 13.690135 / std deviation = 10.890285
+test 3 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.660490 / std deviation = 0.678596
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.678508 / std deviation = 0.700251
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.678671 / std deviation = 0.697001
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.788916 / std deviation = 0.759769
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.672330 / std deviation = 0.685721
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.727080 / std deviation = 0.729381
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.611001 / std deviation = 0.667793
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.238666 / std deviation = 34.802894
+test 4 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.631989 / std deviation = 0.667453
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.666008 / std deviation = 0.703525
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.631966 / std deviation = 0.668552
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.631841 / std deviation = 0.662108
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.675557 / std deviation = 0.694241
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.730761 / std deviation = 0.721641
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.676655 / std deviation = 0.680649
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.273059 / std deviation = 34.801343
+test 5 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.732683 / std deviation = 0.721438
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.690101 / std deviation = 0.694969
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.743924 / std deviation = 0.729903
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.704051 / std deviation = 0.713512
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.662855 / std deviation = 0.679643
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.663849 / std deviation = 0.677346
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.681100 / std deviation = 0.694733
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.251529 / std deviation = 34.796110
+test 6 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.872674 / std deviation = 0.783945
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.856376 / std deviation = 0.767414
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.819249 / std deviation = 0.746352
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.640604 / std deviation = 0.662020
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.704953 / std deviation = 0.684255
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.690838 / std deviation = 0.684374
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.603757 / std deviation = 0.646270
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.257517 / std deviation = 34.777494
+test 7 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.669727 / std deviation = 0.671725
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.723710 / std deviation = 0.694154
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.676239 / std deviation = 0.673431
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.654825 / std deviation = 0.658579
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.657695 / std deviation = 0.662666
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.612704 / std deviation = 0.641051
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.642997 / std deviation = 0.658902
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 13.038157 / std deviation = 14.246377
+test 8 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.662236 / std deviation = 0.680646
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.866741 / std deviation = 0.799605
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.838957 / std deviation = 0.775415
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.814547 / std deviation = 0.768246
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.826432 / std deviation = 0.774382
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.828587 / std deviation = 0.777302
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.611035 / std deviation = 0.663723
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 55.250863 / std deviation = 34.811804
+test 9 ending
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 1.0 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.567139 / std deviation = 0.630169
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.9 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.520216 / std deviation = 0.608383
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.8 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.538146 / std deviation = 0.619429
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.7 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.529135 / std deviation = 0.614640
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.6 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.565193 / std deviation = 0.627341
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.5 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.552748 / std deviation = 0.624636
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.4 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 1.516936 / std deviation = 0.614997
+objet source : ObjetSynthetique_simp32_source_m0_s0_filtered , downsampling : 0.3 ; objet target : ObjetSynthetique_simp64_edgeCollapse_target_m0_s0.3_XZ0.4_filtered
+Mean distance = 17.096575 / std deviation = 18.146136
+test 10 ending

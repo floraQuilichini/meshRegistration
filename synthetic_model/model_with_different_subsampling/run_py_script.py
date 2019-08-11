@@ -7,9 +7,9 @@ from shutil import copyfile
 from pathlib import Path
 
 # variables
-source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
-target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
-output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\24_07_19\\results'
+source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
+target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
+output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19'
 initial_matching = 'False'
 cross_check = 'False'
 
@@ -20,10 +20,10 @@ eng.workspace['target_filename'] = target_filename
 eng.eval("nb_pc_target = 1;", nargout = 0)
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
-eng.eval("noise_level_source  = 0.0", nargout = 0)
-eng.eval("noise_level_target = 0.8;", nargout = 0)
+eng.eval("noise_level_source  = 0", nargout = 0)
+eng.eval("noise_level_target = 0;", nargout = 0)
 eng.eval("nb_noise_matrix_source = 0;", nargout = 0)
-eng.eval("nb_noise_matrix_target = 1;", nargout = 0)
+eng.eval("nb_noise_matrix_target = 0;", nargout = 0)
 eng.eval("cutting_plane = 'XZ';", nargout = 0)
 eng.eval("ratio = 0.4;", nargout = 0)
 eng.eval("theta = 3.14/2;", nargout = 0)
@@ -50,7 +50,7 @@ for i in range(10):
     # file header
     fgr_cc_result_file = os.path.join(full_output_dir, 'cc_results.txt')
     out_file =open(fgr_cc_result_file, "a+")
-    out_file.write("test %d ending\n" % i+1)
+    out_file.write("test %s ending\n" % str(i+1))
     out_file.close()
     
 

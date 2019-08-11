@@ -82,8 +82,8 @@ if initial_matching == 'False' or initial_matching == 'false' :
     fpfh_source_textfilename = source_name + "_downsampled" + str(fraction_kept_points)+ "_fpfh.txt"
     fpfh_target_textfilename = target_name + "_fpfh.txt"
     Tfilename = os.path.join(full_output_dir, 'transform_matrix_model.txt')
-    [mean_dist, pairs_target_source] = eng.getFPFHHistogramsDistance(os.path.join(full_output_dir, fpfh_source_textfilename), os.path.join(full_output_dir, fpfh_target_textfilename), True, 'L2', nargout = 2)
-    eng.visualizeFPFHPoints(os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pcd_source_file), os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pc_down_filename), pairs_target_source, Tfilename, 1.0, 0.0, 0.0, nargout = 0)
+    [mean_dist, pairs_target_source] = eng.getFPFHHistogramsDistance(os.path.join(full_output_dir, fpfh_source_textfilename), os.path.join(full_output_dir, fpfh_target_textfilename), True, 'KL', nargout = 2)
+    #eng.visualizeFPFHPoints(os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pcd_source_file), os.path.join(full_output_dir, pcd_target_file), os.path.join(full_output_dir, pc_down_filename), pairs_target_source, Tfilename, 1.0, 0.0, 0.0, nargout = 0)
 
 
 # FGR
