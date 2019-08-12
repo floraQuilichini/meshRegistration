@@ -10,8 +10,12 @@ from pathlib import Path
 source_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19\\input_meshes\\source\\ObjetSynthetique_simp32.ply'
 target_filename = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19\\input_meshes\\target\\ObjetSynthetique_simp64_edgeCollapse.ply'
 output_directory = 'C:\\Registration\\Test\\meshRegistration\\synthetic_model\\09_08_19'
+bilateral_filtering = 'False'
+computing_features_with_downsampled_mesh = 'False'
+correspondence_metric = 'L2'
 initial_matching = 'False'
 cross_check = 'False'
+use_c2c_metric = 'True'   # c2m otherwise
 
 eng = matlab.engine.start_matlab()
 eng.workspace['output_directory'] = output_directory
@@ -20,10 +24,10 @@ eng.workspace['target_filename'] = target_filename
 eng.eval("nb_pc_target = 1;", nargout = 0)
 eng.eval("type_of_noise = 'gaussian';", nargout = 0)
 eng.eval("noise_generation = 'auto';", nargout = 0)
-eng.eval("noise_level_source  = 0", nargout = 0)
-eng.eval("noise_level_target = 0;", nargout = 0)
-eng.eval("nb_noise_matrix_source = 0;", nargout = 0)
-eng.eval("nb_noise_matrix_target = 0;", nargout = 0)
+eng.eval("noise_level_source  = 0.3", nargout = 0)
+eng.eval("noise_level_target = 0.5;", nargout = 0)
+eng.eval("nb_noise_matrix_source = 1;", nargout = 0)
+eng.eval("nb_noise_matrix_target = 1;", nargout = 0)
 eng.eval("cutting_plane = 'XZ';", nargout = 0)
 eng.eval("ratio = 0.4;", nargout = 0)
 eng.eval("theta = 3.14/2;", nargout = 0)
@@ -42,7 +46,7 @@ for i in range(10):
     downsampling_coeff_list = ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3']
     for down_coeff  in downsampling_coeff_list:
         print(down_coeff)
-        myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", source_filename, full_output_dir, source_name, target_name, down_coeff, initial_matching, cross_check])
+        myProcess = subprocess.Popen(["python", "registration_workflow_v2.py", source_filename, full_output_dir, source_name, target_name, down_coeff, bilateral_filtering, computing_features_with_downsampled_mesh, correspondence_metric, initial_matching, cross_check, use_c2c_metric])
         myProcess.wait()
     
     
@@ -78,8 +82,11 @@ for i in range(10):
     # open(log_file, 'a').close()
     icp_cc_result_file = os.path.join(full_output_dir, output_subdir, 'icp_cc_results.txt')
     open(icp_cc_result_file, 'a').close()
-    args = cloudCompare_exe + " -SILENT" + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + os.path.join(full_output_dir, output_subdir, pcd_source_file) + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2c_dist"  # compared file first and reference file second
-    # args = cloudCompare_exe + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + source_filename + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to compute C2M distance
+    if use_c2c_metric  == 'True' or initial_matching == 'true' :
+        args = cloudCompare_exe + " -SILENT" + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + os.path.join(full_output_dir, output_subdir, pcd_source_file) + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2c_dist"  # compared file first and reference file second
+    else :
+        args = cloudCompare_exe + " -SILENT" + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + source_filename + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2m_dist" # compute C2M distance
+        # args = cloudCompare_exe + " -o " + os.path.join(full_output_dir, output_subdir, registered_pc_name) + " -o " + source_filename + " -NO_TIMESTAMP -C_EXPORT_FMT ASC -c2m_dist -LOG_FILE " + log_file  # uncomment if you want to use log file
     subprocess.call(args, stdin=None, stdout=None, stderr=None)
 
 
@@ -87,26 +94,26 @@ for i in range(10):
         # get file with c2c distance 
     path = Path(full_output_dir) / 'ICP'
     for file in os.listdir(path):
-        if "C2C_DIST" in file and ".asc" in file:
-            c2c_file = file
+        if ("C2C_DIST" in file or "C2M_DIST" in file) and ".asc" in file:
+            metric_file = file
 
         # get everything in column 4
     col_num = 3
     col_data = []
     delimiter = " "
-    with open(path / c2c_file) as f:
+    with open(path / metric_file) as f:
         data = f.readlines()
         for line in data:
             col_data.append(line.strip().split(delimiter)[col_num])
 
-    mean_C2C_dist = statistics.mean(list(map(float, col_data)))
-    print(mean_C2C_dist)
-    std_C2C = statistics.stdev(list(map(float, col_data)))
-    print(std_C2C)
+    mean_metric_dist = statistics.mean(list(map(float, col_data)))
+    print(mean_metric_dist)
+    std_metric = statistics.stdev(list(map(float, col_data)))
+    print(std_metric)
     header = "objet source : " + source_name  + " ; objet target : " + target_name + "\n"
     out_file =open(icp_cc_result_file, "a+")
     out_file.write("%s" % header)
-    out_file.write("Mean distance = %5.6f / std deviation = %5.6f\n" % (mean_C2C_dist,std_C2C))
+    out_file.write("Mean distance = %5.6f / std deviation = %5.6f\n" % (mean_metric_dist,std_metric))
     out_file.close()
 
 
